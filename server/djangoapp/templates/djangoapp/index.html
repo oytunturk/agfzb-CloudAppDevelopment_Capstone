@@ -22,10 +22,6 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">Best Cars</a>
             </div>
-            <div>
-                <button class="btn btn-home" type="button">Home</button>
-                <a class="btn btn-home" href="{% url 'djangoapp:about' %}">Home</a>
-            </div>
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                 <li>
