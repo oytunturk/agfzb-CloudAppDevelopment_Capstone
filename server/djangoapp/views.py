@@ -31,7 +31,7 @@ def contact(request):
         return render(request, 'djangoapp/contact.html', context)
 
 # Create a `login_request` view to handle sign in request
-def login(request):
+def login_request(request):
     context = {}
     # Handles POST request
     if request.method == "POST":
@@ -51,7 +51,7 @@ def login(request):
         return render(request, 'djangoapp/login.html', context)
     
 # Create a `logout_request` view to handle sign out request
-def logout(request):
+def logout_request(request):
     # Get the user object based on session id in request
     print("Log out the user `{}`".format(request.user.username))
     # Logout user in the request
