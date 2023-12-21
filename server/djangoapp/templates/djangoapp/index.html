@@ -48,9 +48,9 @@
     <h2>Dealership list</h2>
 
     <!-- Add your template there -->
-    {% if dealer_list %}
+    {% if context.dealer_list %}
         <ul>
-        {% for dealer in dealer_list %}
+        {% for dealer in context.dealer_list %}
             <div class="container">
                 <div class="row">
                     <div class="column-33">
