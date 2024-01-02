@@ -15,9 +15,9 @@ class CarMake(models.Model):
     first_release_date = models.DateField(null=True)
 
     def __str__(self):
-        return "Name: " + self.name + ", " + \
-               "Description: " + self.description + ", " + \
-               "First release date: " + self.first_release_date
+        return "Name: " + str(self.name) + ", " + \
+               "Description: " + str(self.description) + ", " + \
+               "First release date: " + str(self.first_release_date)
 
 
 # <HINT> Create a Car Model model `class CarModel(models.Model):`:
@@ -31,7 +31,7 @@ class CarMake(models.Model):
 class CarModel(models.Model):
     name = models.CharField(null=False, max_length=30, default='Not Defined')
     dealer_id = models.IntegerField(default=0)
-    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
+    make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
     SEDAN, SUV, WAGON, TRUCK = 'Sedan', 'SUV', 'Wagon', 'Truck'
     TYPE_CHOICES = [
         (SEDAN, 'Sedan'),
@@ -39,7 +39,7 @@ class CarModel(models.Model):
         (WAGON, 'Wagon'),
         (TRUCK, 'Truck')
     ]
-    car_type = models.CharField(
+    type = models.CharField(
         null=False,
         max_length=20,
         choices=TYPE_CHOICES,
@@ -54,7 +54,7 @@ class CarModel(models.Model):
         (NAVY, 'Navy'),
         (GRAY, 'Gray')
     ]
-    car_color = models.CharField(
+    color = models.CharField(
         null=False,
         max_length=20,
         choices=COLOR_CHOICES,
@@ -62,11 +62,11 @@ class CarModel(models.Model):
     )
 
     def __str__(self):
-        return "Name: " + self.name + ", " + \
-               "Dealer: " + self.dealer_id + ", " + \
-               "Type: " + self.car_type + ", " +\
-               "Year: " + self.year + ", " + \
-               "Color: " + self.car_color
+        return "Name: " + str(self.name) + ", " + \
+               "Dealer: " + str(self.dealer_id) + ", " + \
+               "Type: " + str(self.type) + ", " +\
+               "Year: " + str(self.year) + ", " + \
+               "Color: " + str(self.color)
 
 # <HINT> Create a plain Python class `CarDealer` to hold dealer data
 class CarDealer(models.Model):
