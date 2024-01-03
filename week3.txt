@@ -1,0 +1,11 @@
+Project URL
+https://github.com/oytunturk/agfzb-CloudAppDevelopment_Capstone
+
+GET END-POINT
+https://oytunturk-3000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/dealerships/get
+
+GET REVIEW END-POINT
+https://oytunturk-5000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/api/get_reviews?id=15
+
+POST REVIEW END-POINT
+https://oytunturk-5000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/api/post_review
