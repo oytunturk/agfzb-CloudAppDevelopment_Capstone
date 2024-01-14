@@ -1,6 +1,38 @@
 Project URL
 https://github.com/oytunturk/agfzb-CloudAppDevelopment_Capstone
 
+1. Install and run the database server (you'll need to follow the steps for cloudant from "Hands-on Lab: Implement IBM Cloud Function Endpoints")
+
+#Install cloudant and express
+cd /home/project/agfzb-CloudAppDevelopment_Capstone/functions
+sudo npm init -y
+sudo npm install -s @cloudant/cloudant
+sudo npm install express  
+
+#Run the node.js backend server
+node get-dealership.js
+
+
+2. Start and connect to PostGreSQL under DATABSES in Theia environment
+rm /home/project/agfzb-CloudAppDevelopment_Capstone/server/db.sqlite3
+DATABSES --> PostGRESQL --> Start
+Note the username and password
+
+pip install --upgrade distro-info
+pip3 install --upgrade pip==23.2.1
+pip install psycopg2-binary==2.9.7
+
+Enter the PostGRESql user and password into: /home/project/agfzb-CloudAppDevelopment_Capstone/server/djangobackend/settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        'USER': 'oytunturk',
+        'PASSWORD': 'MjQzNzEtb3l0dW50',
+    }
+}
+
+3. Test the end-points using
 GET END-POINT
 https://oytunturk-3000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/dealerships/get
 
@@ -9,3 +41,21 @@ https://oytunturk-5000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognit
 
 POST REVIEW END-POINT
 https://oytunturk-5000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/api/post_review
+
+3. Run the back-end server
+cd /home/project/agfzb-CloudAppDevelopment_Capstone/server
+python3 -m pip install -U -r requirements.txt
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py runserver
+
+4. Test the back-end server
+
+https://oytunturk-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/djangoapp/about
+
+https://oytunturk-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/djangoapp/contact
+
+#You can register a new user here
+https://oytunturk-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/djangoapp/registration
+
+https://oytunturk-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/djangoapp/index
